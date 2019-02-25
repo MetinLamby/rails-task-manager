@@ -1,0 +1,17 @@
+<div class=5">
+  <h1><%= @task.title %></h1>
+  <hr>
+  <h5><%= @task.details %></h5>
+  <hr>
+  <div>
+    <% if @task.completed == true %>
+      <p>✅ This task is completed</p>
+    <% else %>
+      <p>❌ This task is not completed!</p>
+    <% end %>
+  </div>
+  <hr>
+  <p><%= link_to "Edit this task", edit_task_path %></p>
+  <hr>
+  <p><%= link_to "Back to TASKLIST", tasks_path %></p>
+</div>

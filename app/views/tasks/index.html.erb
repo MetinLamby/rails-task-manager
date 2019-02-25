@@ -1,0 +1,21 @@
+<div class="text-center whole">
+  <h1>This is the index page!</h1>
+  <hr>
+    <div class="container">
+      <div class="col-md-6">
+        <% @tasks.each do |t| %>
+          <div class="onetask">
+            <% if t.completed == true %>
+              <p class="checkboxes">✅</p>
+            <% else %>
+              <p class="checkboxes">❌</p>
+            <% end %>
+            <p class="name"><%= link_to t.title, task_path(t.id) %></p>
+            <p class="delete"><%= link_to "Destroy", task_path(t.id), method: :delete %></p>
+            <hr>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <p><%= link_to "Add a new task", new_task_path, class: "test" %></p>
+</div>
